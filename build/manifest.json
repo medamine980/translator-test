@@ -1,0 +1,31 @@
+{
+    "name": "translator-test",
+    "version": "1.0.0",
+    "author": "medamine",
+    "action": {
+        "default_title": "translator-test",
+        "default_popup": "popup/index.html"
+    },
+    "manifest_version": 3,
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*/*"
+            ],
+            "js": [
+                "content_scripts/content_script.js"
+            ],
+            "all_frames": true
+        }
+    ],
+    "permissions": [
+        "tabs",
+        "scripting"
+    ],
+    "host_permissions": [
+        "https://*/*"
+    ],
+    "background": {
+        "service_worker": "service-worker.js"
+    }
+}
